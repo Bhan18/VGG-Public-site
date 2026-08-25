@@ -10,6 +10,7 @@ export function Footer() {
   const email = settings?.email ?? "info@vgginfra.com";
   const address = settings?.address ?? "Bengaluru, Karnataka";
   const companyName = settings?.companyName ?? "VGG Infra Developers";
+  const companyLogo = settings?.companyLogo;
 
   const scrollTo = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
@@ -31,9 +32,18 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center">
-                <Trees className="h-6 w-6 text-primary-foreground" />
-              </div>
+              {companyLogo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={companyLogo}
+                  alt={companyName}
+                  className="w-10 h-10 rounded-xl object-cover"
+                />
+              ) : (
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center">
+                  <Trees className="h-6 w-6 text-primary-foreground" />
+                </div>
+              )}
               <span className="font-bold text-lg">{companyName}</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">

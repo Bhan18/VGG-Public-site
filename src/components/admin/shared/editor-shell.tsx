@@ -161,22 +161,26 @@ export function EditorShell({ config }: { config: EditorConfig }) {
           {usingLocalFallback() && (
             <Badge variant="outline" className="text-amber-600 border-amber-500/40">Local Mode</Badge>
           )}
-          <Button onClick={handleAdd} size="sm">
-            <Plus className="h-4 w-4 mr-1" /> Add {config.singular}
-          </Button>
+          {!config.single && (
+            <Button onClick={handleAdd} size="sm">
+              <Plus className="h-4 w-4 mr-1" /> Add {config.singular}
+            </Button>
+          )}
         </div>
       </div>
 
       {/* Search */}
-      <div className="relative max-w-md">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder="Search..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="pl-9"
-        />
-      </div>
+      {!config.single && (
+        <div className="relative max-w-md">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-9"
+          />
+        </div>
+      )}
 
       {/* Error */}
       {error && (
@@ -196,7 +200,7 @@ export function EditorShell({ config }: { config: EditorConfig }) {
         ) : filtered.length === 0 ? (
           <div className="p-12 text-center text-muted-foreground">
             <Icon className="h-10 w-10 mx-auto mb-2 opacity-30" />
-            <p>No {config.title.toLowerCase()} yet. Click "Add {config.singular}" to create one.</p>
+            <p>{config.single ? "No settings row found." : `No ${config.title.toLowerCase()} yet. Click "Add ${config.singular}" to create one.`}</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -215,27 +219,31 @@ export function EditorShell({ config }: { config: EditorConfig }) {
                 {filtered.map((row, idx) => (
                   <tr key={row.id as string} className="border-b border-border last:border-0 hover:bg-secondary/30">
                     <td className="p-3 text-muted-foreground">
-                      <div className="flex items-center gap-1">
+                      {config.single ? (
                         <span className="text-xs">{idx + 1}</span>
-                        <div className="flex flex-col">
-                          <button
-                            onClick={() => moveRow(idx, "up")}
-                            disabled={idx === 0}
-                            className="text-muted-foreground hover:text-primary disabled:opacity-30"
-                            aria-label="Move up"
-                          >
-                            <ArrowUp className="h-3 w-3" />
-                          </button>
-                          <button
-                            onClick={() => moveRow(idx, "down")}
-                            disabled={idx === filtered.length - 1}
-                            className="text-muted-foreground hover:text-primary disabled:opacity-30"
-                            aria-label="Move down"
-                          >
-                            <ArrowDown className="h-3 w-3" />
-                          </button>
+                      ) : (
+                        <div className="flex items-center gap-1">
+                          <span className="text-xs">{idx + 1}</span>
+                          <div className="flex flex-col">
+                            <button
+                              onClick={() => moveRow(idx, "up")}
+                              disabled={idx === 0}
+                              className="text-muted-foreground hover:text-primary disabled:opacity-30"
+                              aria-label="Move up"
+                            >
+                              <ArrowUp className="h-3 w-3" />
+                            </button>
+                            <button
+                              onClick={() => moveRow(idx, "down")}
+                              disabled={idx === filtered.length - 1}
+                              className="text-muted-foreground hover:text-primary disabled:opacity-30"
+                              aria-label="Move down"
+                            >
+                              <ArrowDown className="h-3 w-3" />
+                            </button>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </td>
                     {config.fields.filter((f) => !f.hideInTable).slice(0, 4).map((f) => (
                       <td key={f.key} className="p-3 max-w-xs">
@@ -255,9 +263,11 @@ export function EditorShell({ config }: { config: EditorConfig }) {
                         <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleEdit(row)} aria-label="Edit">
                           <Pencil className="h-3.5 w-3.5" />
                         </Button>
-                        <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => setDeleteId(row.id as string)} aria-label="Delete">
-                          <Trash2 className="h-3.5 w-3.5" />
-                        </Button>
+                        {!config.single && (
+                          <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => setDeleteId(row.id as string)} aria-label="Delete">
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </Button>
+                        )}
                       </div>
                     </td>
                   </tr>

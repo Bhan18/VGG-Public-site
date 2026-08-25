@@ -80,6 +80,7 @@ export interface CompanySettings {
   phone?: string;
   email?: string;
   upi?: string;
+  themeMode?: "dark" | "light";
   bankDetails?: {
     bankName?: string;
     accountName?: string;

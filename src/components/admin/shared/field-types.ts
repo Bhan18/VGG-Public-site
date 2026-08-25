@@ -39,4 +39,6 @@ export interface EditorConfig {
   orderField?: string;
   // Whether the table supports active/inactive toggle
   hasActiveToggle?: boolean;
+  // Single-row table (e.g. settings): hides Add/Search/Delete/reorder
+  single?: boolean;
 }

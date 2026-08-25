@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Trees, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { useSettings } from "@/hooks/use-vgg-data";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +25,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const { data: settings } = useSettings();
   const companyName = settings?.companyName ?? "VGG Infra Developers";
+  const companyLogo = settings?.companyLogo;
   const phone = settings?.phone ?? "+91 98765 43210";
 
   useEffect(() => {
@@ -57,9 +57,18 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="#home" onClick={(e) => { e.preventDefault(); handleClick("#home"); }} className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
-              <Trees className="h-6 w-6 text-primary-foreground" />
-            </div>
+            {companyLogo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={companyLogo}
+                alt={companyName}
+                className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform"
+              />
+            ) : (
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
+                <Trees className="h-6 w-6 text-primary-foreground" />
+              </div>
+            )}
             <div className="flex flex-col leading-tight">
               <span className="font-bold text-base sm:text-lg text-foreground tracking-tight">
                 {nameParts[0]} {nameParts.slice(1).join(" ")}
@@ -84,7 +93,6 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"

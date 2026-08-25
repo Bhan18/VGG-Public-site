@@ -3,7 +3,7 @@
 // ============================================================
 import {
   Image, Images, Sparkles, MessageSquare, HelpCircle, Users, Tag,
-  FileText, Newspaper, MapPin, Video, BarChart3, GitBranch,
+  FileText, Newspaper, MapPin, Video, BarChart3, GitBranch, Settings,
   type LucideIcon,
 } from "lucide-react";
 import type { EditorConfig } from "./field-types";
@@ -254,6 +254,40 @@ export const EDITOR_CONFIGS: EditorConfig[] = [
       { key: "order", label: "Order", type: "number", default: 0, hideInTable: true },
     ],
   },
+  // 14. Website Content (single settings row)
+  {
+    table: "settings",
+    title: "Website Content",
+    singular: "Website Content",
+    icon: Settings,
+    description: "Company logo (also used as favicon), contact info, bank details, and theme",
+    single: true,
+    fields: [
+      { key: "company_name", label: "Company Name", type: "text", required: true },
+      {
+        key: "company_logo", label: "Logo", type: "image", fullWidth: true,
+        helpText: "Shown in navbar + footer and used as the browser favicon. Recommended: square image 512×512px.",
+      },
+      {
+        key: "theme_mode", label: "Theme Mode", type: "select", default: "dark",
+        options: [
+          { value: "dark", label: "Dark Mode" },
+          { value: "light", label: "Light Mode" },
+        ],
+        helpText: "Applies to the entire website for all visitors.",
+      },
+      { key: "phone", label: "Phone", type: "text" },
+      { key: "email", label: "Email", type: "text" },
+      { key: "gst", label: "GST Number", type: "text" },
+      { key: "upi", label: "UPI ID", type: "text" },
+      { key: "address", label: "Address", type: "textarea", fullWidth: true },
+      { key: "bank_name", label: "Bank Name", type: "text" },
+      { key: "account_name", label: "Account Name", type: "text" },
+      { key: "account_number", label: "Account Number", type: "text" },
+      { key: "ifsc", label: "IFSC Code", type: "text" },
+      { key: "branch", label: "Branch", type: "text" },
+    ],
+  },
 ];
 
 export function getEditorConfig(table: string): EditorConfig | undefined {
@@ -265,6 +299,7 @@ export const EDITOR_GROUPS: { label: string; tables: string[] }[] = [
   { label: "Content", tables: ["gallery", "amenities", "videos", "offers", "news"] },
   { label: "Social Proof", tables: ["testimonials", "team_members"] },
   { label: "Info", tables: ["faqs", "nearby_places", "brochures"] },
+  { label: "Others", tables: ["settings"] },
 ];
 
 export function getGroupedEditors(): { label: string; configs: EditorConfig[] }[] {

@@ -303,6 +303,7 @@ function mapSettings(r: Record<string, unknown>): CompanySettings {
     phone: (r.phone as string) ?? undefined,
     email: (r.email as string) ?? undefined,
     upi: (r.upi as string) ?? undefined,
+    themeMode: (r.theme_mode as "dark" | "light") ?? "dark",
     bankDetails: {
       bankName: (r.bank_name as string) ?? undefined,
       accountName: (r.account_name as string) ?? undefined,
