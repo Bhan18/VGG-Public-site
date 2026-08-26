@@ -13,9 +13,11 @@ export function Location() {
   const { data: projects } = useProjects();
   const firstProject = projects?.[0];
 
+  // Vijaya Sandalwood Farm — 6M3Q+69, Bollapalle, Andhra Pradesh 522663
+  const FARM_COORDS = "16.203018,79.688406";
   const mapSrc = firstProject?.mapLat && firstProject?.mapLng
-    ? `https://www.google.com/maps?q=${firstProject.mapLat},${firstProject.mapLng}&z=${firstProject.mapZoom ?? 13}&output=embed`
-    : `https://www.google.com/maps?q=Bollapalli&z=10&output=embed`;
+    ? `https://www.google.com/maps?q=${firstProject.mapLat},${firstProject.mapLng}&z=${firstProject.mapZoom ?? 14}&output=embed`
+    : `https://www.google.com/maps?q=${FARM_COORDS}&z=14&output=embed`;
 
   return (
     <section id="location" className="py-20 md:py-28">
