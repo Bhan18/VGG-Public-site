@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   icons: {
-    icon: [{ url: "/logo.svg?v=2", type: "image/svg+xml" }],
-    shortcut: ["/logo.svg?v=2"],
+    icon: [{ url: "/logo.svg?v=3", type: "image/svg+xml" }],
+    shortcut: ["/logo.svg?v=3"],
   },
   category: "real estate",
 };
