@@ -71,10 +71,10 @@ export function Navbar() {
               </div>
             )}
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-base sm:text-lg text-foreground tracking-tight">
+              <span className={cn("font-bold text-base sm:text-lg tracking-tight", scrolled ? "text-foreground" : "text-white drop-shadow-sm")}>
                 {nameParts[0]} {nameParts.slice(1).join(" ")}
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground hidden sm:block">Farmland Developers</span>
+              <span className={cn("text-[10px] uppercase tracking-[0.2em] hidden sm:block", scrolled ? "text-muted-foreground" : "text-white/60")}>Farmland Developers</span>
             </div>
           </Link>
 
@@ -84,7 +84,10 @@ export function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
-                className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
+                className={cn(
+                  "px-3 py-2 text-sm font-medium transition-colors relative group",
+                  scrolled ? "text-foreground/80 hover:text-primary" : "text-white/90 hover:text-white"
+                )}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-6 transition-all" />
@@ -94,7 +97,7 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
+            <ThemeToggle onDark={!scrolled} />
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"
@@ -105,7 +108,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden rounded-full"
+              className={cn("lg:hidden rounded-full", !scrolled && "text-white hover:bg-white/15")}
               aria-label="Open menu"
               onClick={() => setOpen(true)}
             >

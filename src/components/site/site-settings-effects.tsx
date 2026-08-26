@@ -19,11 +19,12 @@ export function SiteSettingsEffects() {
   const logo = settings?.companyLogo;
 
   useEffect(() => {
+    const urlTheme = new URLSearchParams(window.location.search).get("theme");
     let stored: string | null = null;
     try {
       stored = localStorage.getItem(THEME_STORAGE_KEY);
     } catch {}
-    applyTheme(stored ?? themeMode);
+    applyTheme(urlTheme ?? stored ?? themeMode);
   }, [themeMode]);
 
   useEffect(() => {

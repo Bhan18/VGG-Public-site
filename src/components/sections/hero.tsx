@@ -49,7 +49,7 @@ export function Hero() {
         </AnimatePresence>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/80 via-emerald-900/60 to-amber-900/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
         {/* Animated blobs */}
         <motion.div
           className="absolute top-1/4 -left-20 w-72 h-72 rounded-full bg-amber-500/20 blur-3xl"
@@ -73,7 +73,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-700 dark:text-amber-300 text-sm font-medium mb-6"
           >
             <Sparkles className="h-4 w-4" />
-            DTCP Approved Farmland Plots Near Bengaluru
+            Sri Gandham Farmland Plots Near Amaravathi
           </motion.div>
 
           {/* Title */}
@@ -113,7 +113,7 @@ export function Hero() {
             className="mt-4 flex items-center gap-2 text-emerald-100/80 text-sm"
           >
             <MapPin className="h-4 w-4" />
-            <span>Anekal · Hosur · Devanahalli · Bengaluru</span>
+            <span>Guntur · Amaravathi · Vinukonda · </span>
           </motion.div>
 
           {/* CTAs */}
@@ -161,7 +161,7 @@ export function Hero() {
               key={i}
               onClick={() => setIdx(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === idx ? "w-8 bg-amber-400" : "w-2 bg-white/40 hover:bg-white/60"}`}
+              className={`h-2 rounded-full transition-all ${i === idx ? "w-8 bg-amber-500" : "w-2 bg-foreground/25 hover:bg-foreground/45"}`}
             />
           ))}
         </div>
@@ -172,7 +172,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 right-8 hidden md:flex flex-col items-center gap-2 text-white/60 text-xs uppercase tracking-widest z-20"
+        className="absolute bottom-8 right-8 hidden md:flex flex-col items-center gap-2 text-muted-foreground text-xs uppercase tracking-widest z-20"
       >
         <span>Scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>

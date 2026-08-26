@@ -15,7 +15,7 @@ export function Location() {
 
   const mapSrc = firstProject?.mapLat && firstProject?.mapLng
     ? `https://www.google.com/maps?q=${firstProject.mapLat},${firstProject.mapLng}&z=${firstProject.mapZoom ?? 13}&output=embed`
-    : `https://www.google.com/maps?q=Bengaluru&z=10&output=embed`;
+    : `https://www.google.com/maps?q=Bollapalli&z=10&output=embed`;
 
   return (
     <section id="location" className="py-20 md:py-28">
@@ -33,7 +33,7 @@ export function Location() {
             Strategically Located, <span className="text-gradient-green">Easily Connected</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Our projects are placed at the sweet spot between nature and connectivity — close enough to Bengaluru for daily commute,
+            Our projects are placed at the sweet spot between nature and connectivity
             far enough to enjoy clean air, green landscapes, and peaceful surroundings. Here's what's around our flagship project.
           </p>
         </motion.div>

@@ -107,7 +107,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'try{if(localStorage.getItem("vgg-theme")==="light")document.documentElement.classList.remove("dark")}catch(e){}',
+              'try{var q=new URLSearchParams(location.search).get("theme");if(q?q==="light":localStorage.getItem("vgg-theme")==="light")document.documentElement.classList.remove("dark")}catch(e){}',
           }}
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

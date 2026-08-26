@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const THEME_STORAGE_KEY = "vgg-theme";
 
-export function ThemeToggle() {
+export function ThemeToggle({ onDark = false }: { onDark?: boolean }) {
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
@@ -28,9 +29,15 @@ export function ThemeToggle() {
       size="icon"
       aria-label="Toggle theme"
       onClick={toggle}
-      className="rounded-full hover:bg-accent/20"
+      className={cn("rounded-full", onDark ? "text-white hover:bg-white/15" : "hover:bg-accent/20")}
     >
-      {isDark ? <Sun className="h-5 w-5 text-amber-400" /> : <Moon className="h-5 w-5 text-primary" />}
+      {isDark ? (
+        <Sun className="h-5 w-5 text-amber-400" />
+      ) : onDark ? (
+        <Moon className="h-5 w-5 text-white" />
+      ) : (
+        <Moon className="h-5 w-5 text-primary" />
+      )}
     </Button>
   );
 }
