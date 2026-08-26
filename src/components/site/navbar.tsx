@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Trees, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { useSettings } from "@/hooks/use-vgg-data";
 import { cn } from "@/lib/utils";
 
@@ -93,6 +94,7 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"

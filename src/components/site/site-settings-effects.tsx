@@ -2,9 +2,15 @@
 import { useEffect } from "react";
 import { useSettings } from "@/hooks/use-vgg-data";
 
+const THEME_STORAGE_KEY = "vgg-theme";
+
+function applyTheme(mode: string) {
+  document.documentElement.classList.toggle("dark", mode !== "light");
+}
+
 /**
  * Applies admin-controlled site settings that affect the document:
- * - theme_mode: toggles the `dark` class on <html> for all visitors
+ * - theme_mode: site-wide default theme (visitor's personal choice wins)
  * - company_logo: swaps the browser favicon dynamically
  */
 export function SiteSettingsEffects() {
@@ -13,8 +19,18 @@ export function SiteSettingsEffects() {
   const logo = settings?.companyLogo;
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", themeMode !== "light");
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(THEME_STORAGE_KEY);
+    } catch {}
+    applyTheme(stored ?? themeMode);
   }, [themeMode]);
+
+  useEffect(() => {
+    const handler = (e: Event) => applyTheme((e as CustomEvent<string>).detail);
+    window.addEventListener("vgg-theme-change", handler);
+    return () => window.removeEventListener("vgg-theme-change", handler);
+  }, []);
 
   useEffect(() => {
     if (!logo) return;

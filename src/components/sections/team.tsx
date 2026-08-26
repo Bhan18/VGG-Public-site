@@ -55,7 +55,7 @@ export function Team() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-5xl font-bold text-white">
+                    <div className="w-full h-full bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center text-5xl font-bold text-white">
                       {m.name.charAt(0)}
                     </div>
                   )}

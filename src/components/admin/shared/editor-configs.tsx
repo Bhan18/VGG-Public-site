@@ -274,7 +274,7 @@ export const EDITOR_CONFIGS: EditorConfig[] = [
           { value: "dark", label: "Dark Mode" },
           { value: "light", label: "Light Mode" },
         ],
-        helpText: "Applies to the entire website for all visitors.",
+        helpText: "Default theme for all visitors. Visitors can still switch it themselves using the sun/moon button in the navbar.",
       },
       { key: "phone", label: "Phone", type: "text" },
       { key: "email", label: "Email", type: "text" },

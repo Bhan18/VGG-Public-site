@@ -104,6 +104,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{if(localStorage.getItem("vgg-theme")==="light")document.documentElement.classList.remove("dark")}catch(e){}',
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className={cn(geistSans.variable, geistMono.variable, jakarta.variable, "antialiased bg-background text-foreground font-sans")}>

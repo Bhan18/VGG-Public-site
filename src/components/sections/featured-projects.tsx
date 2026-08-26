@@ -87,8 +87,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center">
-              <Trees className="h-12 w-12 text-white/50" />
+            <div className="w-full h-full bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center">
+              <Trees className="h-12 w-12 text-white/60" />
             </div>
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
