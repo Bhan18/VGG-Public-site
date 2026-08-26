@@ -70,7 +70,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-300 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-700 dark:text-amber-300 text-sm font-medium mb-6"
           >
             <Sparkles className="h-4 w-4" />
             DTCP Approved Farmland Plots Near Bengaluru
@@ -88,7 +88,7 @@ export function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]"
             >
               {current?.title?.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="text-gradient-gold">{current?.title?.split(" ").slice(-1)}</span>
+              <span className="hero-gold">{current?.title?.split(" ").slice(-1)}</span>
             </motion.h1>
           )}
 
@@ -145,10 +145,10 @@ export function Hero() {
             transition={{ delay: 1 }}
             className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl"
           >
-            <StatCard label="Total Plots" value={stats.total} color="text-white" />
-            <StatCard label="Available" value={stats.available} color="text-emerald-300" />
-            <StatCard label="Booked" value={stats.booked} color="text-amber-300" />
-            <StatCard label="Sold" value={stats.sold} color="text-rose-300" />
+            <StatCard label="Total Plots" value={stats.total} color="text-foreground" />
+            <StatCard label="Available" value={stats.available} color="text-emerald-600 dark:text-emerald-400" />
+            <StatCard label="Booked" value={stats.booked} color="text-amber-600 dark:text-amber-400" />
+            <StatCard label="Sold" value={stats.sold} color="text-rose-600 dark:text-rose-400" />
           </motion.div>
         </div>
       </div>
@@ -187,11 +187,11 @@ export function Hero() {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
         <div className="glass-card rounded-2xl p-4 max-w-[200px]">
-          <div className="flex items-center gap-2 text-amber-300 mb-1">
+          <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300 mb-1">
             <TrendingUp className="h-4 w-4" />
             <span className="text-xs font-semibold uppercase tracking-wider">Trending</span>
           </div>
-          <p className="text-white text-sm font-medium">Sandalwood plots +18% YoY appreciation</p>
+          <p className="text-foreground text-sm font-medium">Sandalwood plots +18% YoY appreciation</p>
         </div>
       </motion.div>
     </section>
@@ -202,7 +202,7 @@ function StatCard({ label, value, color }: { label: string; value: number; color
   return (
     <div className="glass-card rounded-2xl p-4 backdrop-blur-md">
       <AnimatedCounter value={value} className={`text-3xl font-bold ${color}`} />
-      <p className="text-white/70 text-xs uppercase tracking-wider mt-1">{label}</p>
+      <p className="text-muted-foreground text-xs uppercase tracking-wider mt-1">{label}</p>
     </div>
   );
 }

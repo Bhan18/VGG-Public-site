@@ -228,9 +228,9 @@ function ProjectDetailModal({ project, open, onClose }: { project: Project; open
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {[
                 { label: "Total Plots", value: stats.total || project.numberOfPlots },
-                { label: "Available", value: stats.available, color: "text-emerald-600" },
-                { label: "Booked", value: stats.booked, color: "text-amber-600" },
-                { label: "Sold", value: stats.sold, color: "text-rose-600" },
+                  { label: "Available", value: stats.available, color: "text-emerald-600 dark:text-emerald-400" },
+                  { label: "Booked", value: stats.booked, color: "text-amber-600 dark:text-amber-400" },
+                  { label: "Sold", value: stats.sold, color: "text-rose-600 dark:text-rose-400" },
                 { label: "Total Area", value: project.totalArea, raw: true },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl bg-secondary/40 p-3 text-center">

@@ -160,6 +160,13 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Always-bright gold for text sitting on dark imagery (hero), both themes */
+.hero-gold {
+  background: linear-gradient(135deg, oklch(0.87 0.12 88) 0%, oklch(0.76 0.15 66) 50%, oklch(0.87 0.12 88) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* Hero parallax */
 .parallax-bg {
