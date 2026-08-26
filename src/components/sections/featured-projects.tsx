@@ -99,8 +99,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {/*{stats.available > 0 && (
               <Badge className="bg-emerald-500 text-emerald-950 border-0 font-semibold hover:bg-emerald-500">
                 {stats.available} Available
-              </Badge>*/}
-            )}
+              </Badge>
+            )}*/}
           </div>
           <div className="absolute bottom-4 left-4 right-4">
             <h3 className="text-xl font-bold text-white tracking-tight">{project.name}</h3>
