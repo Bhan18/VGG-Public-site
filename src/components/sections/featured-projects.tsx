@@ -96,10 +96,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <Badge className="bg-amber-500 text-amber-950 border-0 font-semibold hover:bg-amber-500">
               {project.status === "active" ? "Active" : project.status === "planned" ? "Pre-Launch" : project.status}
             </Badge>
-            {stats.available > 0 && (
+            {/*{stats.available > 0 && (
               <Badge className="bg-emerald-500 text-emerald-950 border-0 font-semibold hover:bg-emerald-500">
                 {stats.available} Available
-              </Badge>
+              </Badge>*/}
             )}
           </div>
           <div className="absolute bottom-4 left-4 right-4">
@@ -124,10 +124,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Area</p>
               <p className="text-base font-bold text-foreground">{project.totalArea}</p>
             </div>
-            <div>
+           {/* <div>
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Avail.</p>
               <p className="text-base font-bold text-emerald-600 dark:text-emerald-400">{stats.available}</p>
-            </div>
+            </div>*/}
           </div>
 
           {/* Price + CTA */}
@@ -247,7 +247,7 @@ function ProjectDetailModal({ project, open, onClose }: { project: Project; open
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Starting Price</p>
                   <p className="text-2xl font-extrabold text-gradient-green">
-                    {formatINR(project.startingPrice ?? (project.pricePerCent ? project.pricePerCent * 8 : 1800000))}
+                    {formatINR(project.startingPrice ?? (project.pricePerCent ? project.pricePerCent * 8 : 100000))}
                   </p>
                 </div>
                 {project.pricePerCent && (

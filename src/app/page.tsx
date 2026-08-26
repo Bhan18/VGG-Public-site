@@ -26,16 +26,16 @@ export default function Home() {
         <Hero />
         <About />
         <Amenities />
+        <Location />
         <Gallery />
         <Videos />
         <FeaturedProjects />
-        <PlotSearch />
-        <InteractiveLayout />
-        <Location />
+        {/* <PlotSearch /> */}
+        {/*<InteractiveLayout />*/}
         <Testimonials />
         <Team />
         <OffersNews />
-        <FAQ />
+       {/* <FAQ />*/}
         <Contact />
       </main>
       <Footer />
