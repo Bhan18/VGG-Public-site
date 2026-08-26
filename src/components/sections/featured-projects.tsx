@@ -134,7 +134,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div className="flex items-end justify-between">
             <div>
               <p className="text-xs text-muted-foreground">Starting at</p>
-              <p className="text-2xl font-extrabold text-gradient-green">{formatINR(startingPrice)}</p>
+              <p className="text-2xl font-extrabold text-gradient-green">1.2 L{/*formatINR(startingPrice)*/}</p>
             </div>
             <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
               View Details <ArrowRight className="h-4 w-4" />
