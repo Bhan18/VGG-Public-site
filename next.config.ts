@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   async rewrites() {
-    return [{ source: "/favicon.ico", destination: "/logo.svg" }];
+    return [{ source: "/favicon.ico", destination: "/company-logo.jpg" }];
   },
   images: {
     remotePatterns: [
