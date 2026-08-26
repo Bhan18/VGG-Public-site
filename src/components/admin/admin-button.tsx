@@ -7,6 +7,10 @@ import { ContentManager } from "./content-manager";
 export function AdminButton() {
   const [open, setOpen] = useState(false);
 
+  // Admin panel is disabled unless explicitly enabled via env.
+  // Set NEXT_PUBLIC_ENABLE_ADMIN=true in .env and redeploy to bring it back.
+  if (process.env.NEXT_PUBLIC_ENABLE_ADMIN !== "true") return null;
+
   return (
     <>
       {/* Floating button */}
