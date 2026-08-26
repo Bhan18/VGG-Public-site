@@ -215,3 +215,16 @@ export interface TimelineEvent {
   description?: string;
   order: number;
 }
+
+// ---------- Enquiries (contact form submissions) ----------
+export interface Enquiry {
+  id: string;
+  name: string;
+  phone: string;
+  email?: string;
+  message?: string;
+  projectId?: string;
+  source?: string;      // "website"
+  status?: string;      // "new" | "contacted" | "closed"
+  createdAt: string;
+}

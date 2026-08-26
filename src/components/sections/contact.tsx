@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, MessageCircle, Clock, Building2, User } from "lucide-react";
 import { useSettings } from "@/hooks/use-vgg-data";
+import { submitEnquiry } from "@/lib/data";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,15 +29,25 @@ export function Contact() {
     const formData = new FormData(e.currentTarget);
     const name = String(formData.get("name") ?? "");
     const phoneNum = String(formData.get("phone") ?? "");
+    const email = String(formData.get("email") ?? "");
     const message = String(formData.get("message") ?? "");
-    // Compose WhatsApp message (since we don't have a backend mail service, we redirect to WhatsApp)
+
+    // 1) Save the enquiry to the database
+    const result = await submitEnquiry({ name, phone: phoneNum, email, message });
+    if (!result.ok) {
+      toast.error(`Could not save enquiry: ${result.error}`);
+      setSubmitting(false);
+      return;
+    }
+
+    // 2) Also open WhatsApp so the lead reaches the team instantly
     const text = `*New Enquiry from VGG Website*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phoneNum)}%0A*Message:* ${encodeURIComponent(message)}`;
     setTimeout(() => {
       setSubmitting(false);
       window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
-      toast.success("Opening WhatsApp with your enquiry...");
+      toast.success("Enquiry received! We'll contact you within 24 hours.");
       (e.target as HTMLFormElement).reset();
-    }, 600);
+    }, 400);
   };
 
   return (

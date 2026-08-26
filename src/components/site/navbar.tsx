@@ -98,6 +98,17 @@ export function Navbar() {
           {/* Right actions */}
           <div className="flex items-center gap-2">
             <ThemeToggle onDark={!scrolled} />
+            <button
+              onClick={() => handleClick("#contact")}
+              className={cn(
+                "hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-colors",
+                scrolled
+                  ? "border-primary/50 text-primary hover:bg-primary/10"
+                  : "border-white/50 text-white hover:bg-white/15"
+              )}
+            >
+              Enquire Now
+            </button>
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"

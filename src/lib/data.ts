@@ -478,3 +478,36 @@ export const PLOT_STATUS_COLORS: Record<Plot["status"], { bg: string; border: st
   reserved: { bg: "bg-slate-500/30", border: "border-slate-500", text: "text-slate-700 dark:text-slate-300", label: "Reserved", dot: "bg-slate-500" },
   blocked: { bg: "bg-zinc-700/40", border: "border-zinc-700", text: "text-zinc-700 dark:text-zinc-300", label: "Blocked", dot: "bg-zinc-700" },
 };
+
+// ---------- Enquiries (contact form submissions) ----------
+export async function submitEnquiry(input: {
+  name: string;
+  phone: string;
+  email?: string;
+  message?: string;
+  projectId?: string;
+}): Promise<{ ok: boolean; error?: string }> {
+  const row = {
+    name: input.name,
+    phone: input.phone,
+    email: input.email ?? null,
+    message: input.message ?? null,
+    project_id: input.projectId ?? null,
+    source: "website",
+    status: "new",
+  };
+  const s = getSupabase();
+  if (!s) {
+    // Not configured — persist locally so data is never lost in dev/preview
+    try {
+      const raw = localStorage.getItem("vgg-enquiries");
+      const list: unknown[] = raw ? JSON.parse(raw) : [];
+      list.push({ id: `enq-${Date.now()}`, ...row, created_at: new Date().toISOString() });
+      localStorage.setItem("vgg-enquiries", JSON.stringify(list));
+    } catch {}
+    return { ok: true };
+  }
+  const { error } = await s.from("enquiries").insert(row);
+  if (error) return { ok: false, error: error.message };
+  return { ok: true };
+}

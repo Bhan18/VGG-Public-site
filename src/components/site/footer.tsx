@@ -47,7 +47,7 @@ export function Footer() {
               <span className="font-bold text-lg">{companyName}</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Premium DTCP-approved farmland plots near Bengaluru. Investing in green wealth since 2010.
+              Premium Sri Gandham farmland plots near Amaravathi Industrial Corridor. Investing in green wealth since 2010.
             </p>
             <div className="flex gap-2">
               {[
