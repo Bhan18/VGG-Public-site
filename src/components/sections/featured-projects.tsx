@@ -62,7 +62,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     const projectPlots = (allPlots ?? []).filter((p) => p.projectId === project.id);
     return computePlotStats(projectPlots);
   }, [allPlots, project.id]);
-  const startingPrice = project.startingPrice ?? (project.pricePerCent ? project.pricePerCent * 8 : 1800000);
+  const startingPrice = project.startingPrice ?? (project.pricePerCent ? project.pricePerCent * 8 : 120000);
 
   const [open, setOpen] = useState(false);
 

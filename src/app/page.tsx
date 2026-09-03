@@ -31,10 +31,10 @@ export default function Home() {
         <Videos />
         <FeaturedProjects />
         {/* <PlotSearch /> */}
-        {/*<InteractiveLayout />*/}
+        {/*<InteractiveLayout />
         <Testimonials />
         <Team />
-        <OffersNews />
+        <OffersNews /> */}
        {/* <FAQ />*/}
         <Contact />
       </main>
