@@ -14,7 +14,7 @@ export function FeaturedProjects() {
   const { data: projects, loading } = useProjects(120000);
 
   return (
-    <section id="projects" className="py-20 md:py-28 bg-gradient-to-b from-background via-secondary/30 to-background">
+    <section id="projects" className="py-12 md:py-28 bg-gradient-to-b from-background via-secondary/30 to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -22,7 +22,7 @@ export function FeaturedProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-14"
+          className="max-w-3xl mb-8 md:mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
             <Trees className="h-3.5 w-3.5" /> Featured Projects
@@ -30,22 +30,22 @@ export function FeaturedProjects() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
             Explore Our <span className="text-gradient-green">Premium Farmland</span> Projects
           </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             Every VGG project is handpicked for location, soil quality, and appreciation potential.
             All layouts are DTCP approved with clear titles, modern infrastructure, and flexible payment plans.
             Click any project to view detailed information, gallery, plot availability, and downloads.
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Mobile: swipeable carousel / Desktop: grid */}
         {loading ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:snap-none md:overflow-visible">
             {Array.from({ length: 3 }).map((_, i) => (
-              <Skeleton key={i} className="h-[28rem] rounded-3xl" />
+              <Skeleton key={i} className="w-[80vw] sm:w-96 shrink-0 snap-start md:w-auto h-[26rem] rounded-3xl" />
             ))}
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:snap-none md:overflow-visible">
             {(projects ?? []).map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
             ))}
@@ -74,10 +74,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         onClick={() => setOpen(true)}
-        className="group text-left rounded-3xl overflow-hidden glass-card gradient-border hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
+        className="group text-left rounded-3xl overflow-hidden glass-card gradient-border hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 w-[80vw] sm:w-96 shrink-0 snap-start md:w-auto md:shrink"
       >
         {/* Cover image */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative h-52 md:h-56 overflow-hidden">
           {project.coverImage ? (
             <Image
               src={project.coverImage}

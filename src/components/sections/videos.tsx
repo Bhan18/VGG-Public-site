@@ -13,13 +13,13 @@ export function Videos() {
   if (!loading && (!videos || videos.length === 0)) return null;
 
   return (
-    <section id="videos" className="py-20 md:py-28">
+    <section id="videos" className="py-12 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-3xl mb-12"
+          className="max-w-3xl mb-8 md:mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 text-accent-foreground text-xs font-semibold uppercase tracking-widest mb-4">
             <Video className="h-3.5 w-3.5" /> Video Tours
@@ -27,18 +27,18 @@ export function Videos() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Watch Our <span className="text-gradient-gold">Project Walkthroughs</span>
           </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             Take a virtual tour of our projects from the comfort of your home. See the layouts, infrastructure, and natural
             beauty that make VGG farmlands special.
           </p>
         </motion.div>
 
         {loading ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-56 rounded-3xl" />)}
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:snap-none md:overflow-visible">
+            {Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="w-[75vw] sm:w-96 shrink-0 snap-start md:w-auto h-48 md:h-56 rounded-3xl" />)}
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:snap-none md:overflow-visible">
             {(videos ?? []).map((v, i) => (
               <motion.button
                 key={v.id}
@@ -47,7 +47,7 @@ export function Videos() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 onClick={() => setActive(v.url)}
-                className="group relative h-56 rounded-3xl overflow-hidden glass-card gradient-border text-left"
+                className="group relative w-[75vw] sm:w-96 shrink-0 snap-start md:w-auto h-48 md:h-56 rounded-3xl overflow-hidden glass-card gradient-border text-left"
               >
                 {v.thumbnail && (
                   <Image src={v.thumbnail} alt={v.title} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />

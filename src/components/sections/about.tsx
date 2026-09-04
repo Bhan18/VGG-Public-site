@@ -15,7 +15,7 @@ export function About() {
   const { data: timeline, loading: tlLoading } = useTimeline();
 
   return (
-    <section id="about" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="about" className="py-12 md:py-28 relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl -z-10" />
@@ -27,7 +27,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-10 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
             <Sprout className="h-3.5 w-3.5" /> Our Story
@@ -35,7 +35,7 @@ export function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
             Cultivating <span className="text-gradient-green">Trusted Farmland</span> Investments Since 2010
           </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             VGG Infra Developers was founded with a singular mission: to make premium farmland ownership accessible,
             transparent, and rewarding. Over 15 years, we have delivered 12+ DTCP-approved projects across 47 acres,
             helping 850+ families own a piece of nature that grows in value year after year. Every plot we sell comes
@@ -44,7 +44,7 @@ export function About() {
         </motion.div>
 
         {/* Stats counters */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-10 md:mb-20">
           {statsLoading
             ? Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-32 rounded-2xl" />)
             : (stats ?? []).map((stat, i) => {
@@ -56,12 +56,12 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="glass-card rounded-2xl p-6 text-center gradient-border"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="text-3xl md:text-4xl font-extrabold text-gradient-green">
+className="glass-card rounded-2xl p-4 md:p-6 text-center gradient-border"
+                    >
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 md:mb-3">
+                        <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+                      </div>
+                      <div className="text-2xl md:text-4xl font-extrabold text-gradient-green">
                       <CountUp value={stat.value} />
                       {stat.suffix}
                     </div>
@@ -72,7 +72,7 @@ export function About() {
         </div>
 
         {/* Vision / Mission / Values */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-20">
           <ValueCard
             icon={Eye}
             title="Our Vision"
@@ -99,7 +99,7 @@ export function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-center mb-12"
+            className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12"
           >
             Our Journey Through The Years
           </motion.h3>
@@ -149,10 +149,10 @@ function ValueCard({ icon: Icon, title, desc, delay }: { icon: React.ElementType
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="glass-card rounded-2xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-shadow gradient-border"
+      className="glass-card rounded-2xl p-5 md:p-6 hover:shadow-xl hover:shadow-primary/5 transition-shadow gradient-border"
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-primary" />
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-3 md:mb-4">
+        <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
       </div>
       <h3 className="font-bold text-lg mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>

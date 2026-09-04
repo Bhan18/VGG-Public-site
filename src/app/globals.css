@@ -229,6 +229,10 @@
   margin-bottom: 1rem;
 }
 
+/* Hide scrollbars on mobile carousels / pill bars */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* Smooth section reveal */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }

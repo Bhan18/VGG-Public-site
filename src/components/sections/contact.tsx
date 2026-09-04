@@ -51,13 +51,13 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-gradient-to-b from-background to-secondary/20">
+    <section id="contact" className="py-12 md:py-28 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-3xl mx-auto text-center mb-14"
+          className="max-w-3xl mx-auto text-center mb-8 md:mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
             <MessageCircle className="h-3.5 w-3.5" /> Contact Us
@@ -65,13 +65,13 @@ export function Contact() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Let's Find Your <span className="text-gradient-green">Perfect Plot</span>
           </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             Ready to own a piece of nature? Drop us a message, give us a call, or schedule a free site visit.
             Our team responds within 24 hours and walks you through every step — from selection to registration.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
           {/* Left: contact info + map */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

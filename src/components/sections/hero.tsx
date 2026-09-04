@@ -23,7 +23,7 @@ export function Hero() {
   const current = banners?.[idx];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-svh flex items-center overflow-hidden">
       {/* Background slider */}
       <div className="absolute inset-0 -z-10">
         <AnimatePresence mode="sync">
@@ -63,14 +63,14 @@ export function Hero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 pb-8 sm:pt-24 sm:pb-12">
         <div className="max-w-4xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-700 dark:text-amber-300 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-700 dark:text-amber-300 text-sm font-medium mb-5 sm:mb-6"
           >
             <Sparkles className="h-4 w-4" />
             Sri Gandham Farmland Plots Near Amaravathi
@@ -99,7 +99,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-6 text-lg sm:text-xl text-emerald-50/90 max-w-2xl leading-relaxed"
+              className="mt-4 text-base sm:text-xl text-emerald-50/90 max-w-2xl leading-relaxed"
             >
               {current.subtitle}
             </motion.p>
@@ -121,18 +121,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-6 flex flex-wrap gap-3"
           >
             <button
               onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
-              className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-amber-950 font-semibold shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all"
+              className="group inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-amber-950 font-semibold shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all"
             >
               {current?.ctaText ?? "Explore Projects"}
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => document.querySelector("#layout")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-colors"
             >
               View Interactive Layout
             </button>
@@ -143,7 +143,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl"
+            className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl"
           >
             <StatCard label="Total Plots" value={stats.total} color="text-foreground" />
             <StatCard label="Available" value={stats.available} color="text-emerald-600 dark:text-emerald-400" />
@@ -200,9 +200,9 @@ export function Hero() {
 
 function StatCard({ label, value, color }: { label: string; value: number; color: string }) {
   return (
-    <div className="glass-card rounded-2xl p-4 backdrop-blur-md">
-      <AnimatedCounter value={value} className={`text-3xl font-bold ${color}`} />
-      <p className="text-muted-foreground text-xs uppercase tracking-wider mt-1">{label}</p>
+    <div className="glass-card rounded-xl md:rounded-2xl p-2.5 md:p-4 backdrop-blur-md">
+      <AnimatedCounter value={value} className={`text-2xl md:text-3xl font-bold ${color}`} />
+      <p className="text-muted-foreground text-[10px] md:text-xs uppercase tracking-wider mt-0.5 md:mt-1">{label}</p>
     </div>
   );
 }

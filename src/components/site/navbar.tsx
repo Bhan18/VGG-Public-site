@@ -21,6 +21,17 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
+// Compact quick-jump pills shown on mobile so visitors can hop between
+// sections without long scrolling.
+const MOBILE_QUICK = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Amenities", href: "#amenities" },
+  { label: "Contact", href: "#contact" },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -128,6 +139,19 @@ export function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile quick-jump pill bar */}
+      <nav className="lg:hidden flex gap-2 overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 pb-2">
+        {MOBILE_QUICK.map((link) => (
+          <button
+            key={link.href}
+            onClick={() => handleClick(link.href)}
+            className="shrink-0 snap-start px-3.5 py-1.5 rounded-full glass text-[13px] font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
 
       {/* Mobile drawer */}
       <AnimatePresence>

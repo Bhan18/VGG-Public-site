@@ -30,13 +30,13 @@ export function Gallery() {
   const prev = () => setLightboxIdx((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length));
 
   return (
-    <section id="gallery" className="py-20 md:py-28">
+    <section id="gallery" className="py-12 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-3xl mb-12"
+          className="max-w-3xl mb-8 md:mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-4">
             <Images className="h-3.5 w-3.5" /> Gallery
@@ -44,14 +44,14 @@ export function Gallery() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             A Glimpse Of <span className="text-gradient-green">Our Farmlands</span>
           </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             Browse through our gallery to see the landscapes, infrastructure, and lifestyle that await you at every VGG project.
             From grand entrance gateways to lush tree-lined avenues, every detail is crafted with care.
           </p>
         </motion.div>
 
         {/* Category filter */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -67,15 +67,44 @@ export function Gallery() {
           ))}
         </div>
 
-        {/* Masonry grid */}
+        {/* Mobile: swipeable carousel */}
+        {!loading && (
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:hidden">
+            {filtered.map((img, i) => (
+              <button
+                key={img.id}
+                onClick={() => openLightbox(i)}
+                className="relative w-64 shrink-0 snap-start aspect-[4/5] rounded-2xl overflow-hidden glass-card group"
+              >
+                <Image
+                  src={img.image}
+                  alt={img.title ?? "Gallery image"}
+                  fill
+                  sizes="70vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {img.title && (
+                  <div className="absolute bottom-0 left-0 right-0 p-3 text-left">
+                    <p className="text-white font-semibold text-sm">{img.title}</p>
+                    {img.category && <p className="text-white/60 text-xs">{img.category}</p>}
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Desktop: masonry grid */}
         {loading ? (
-          <div className="masonry-grid">
+          <div className="masonry-grid hidden sm:block">
             {Array.from({ length: 6 }).map((_, i) => (
               <Skeleton key={i} className="masonry-item h-64 rounded-2xl" />
             ))}
           </div>
         ) : (
-          <div className="masonry-grid">
+          <div className="masonry-grid hidden sm:block">
             {visible.map((img, i) => (
               <motion.button
                 key={img.id}
@@ -107,9 +136,9 @@ export function Gallery() {
           </div>
         )}
 
-        {/* Load more */}
+        {/* Load more — desktop only (mobile shows everything via swipe) */}
         {visibleCount < filtered.length && (
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center hidden sm:block">
             <button
               onClick={() => setVisibleCount((c) => c + 9)}
               className="px-6 py-3 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
