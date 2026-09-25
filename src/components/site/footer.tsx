@@ -8,7 +8,7 @@ export function Footer() {
   const { data: settings } = useSettings();
   const phone = settings?.phone ?? "+91 98765 43210";
   const email = settings?.email ?? "info@vgginfra.com";
-  const address = settings?.address ?? "Bengaluru, Karnataka";
+  const address = settings?.address ?? "Vijayawada, Andhra Pradesh";
   const companyName = settings?.companyName ?? "VGG Infra Developers";
   const companyLogo = settings?.companyLogo;
 

@@ -14,8 +14,8 @@ export const demoSettings: CompanySettings = {
   companyName: "VGG Infra Developers",
   companyLogo: "",
   gst: "29ABCDE1234F1Z5",
-  address: "No. 42, MG Road, Bengaluru, Karnataka 560001",
-  phone: "+91 98765 43210",
+  address: "Pt.No-27, KCP Colony, Vijayawada, Andhra Pradesh 520007",
+  phone: "+91 9491737999",
   email: "info@vgginfra.com",
   upi: "vgginfra@upi",
   bankDetails: {
@@ -23,7 +23,7 @@ export const demoSettings: CompanySettings = {
     accountName: "VGG Infra Developers Pvt Ltd",
     accountNumber: "501000123456789",
     ifsc: "HDFC0001234",
-    branch: "MG Road, Bengaluru",
+    branch: "KCP Colony, Vijayawada",
   },
 };
 
@@ -31,7 +31,7 @@ export const demoHeroBanners: HeroBanner[] = [
   {
     id: "h1",
     title: "Own a Piece of Nature",
-    subtitle: "Premium Farmland Plots Near Bengaluru",
+    subtitle: "Premium Farmland Plots Near Amaravathi Industrial Corridor",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80",
     ctaText: "Explore Projects",
     ctaLink: "#projects",
@@ -64,7 +64,7 @@ export const demoProjects: Project[] = [
   {
     id: "p-demo1",
     name: "Vijaya Sandalwood Farm",
-    location: "Anekal, Bengaluru South",
+    location: "Bollapalle, Vinukonda",
     totalArea: "12 Acres",
     numberOfPlots: 48,
     layoutImage: "",
@@ -75,8 +75,8 @@ export const demoProjects: Project[] = [
     startingPrice: 1800000,
     pricePerCent: 65000,
     areaUnit: "cents",
-    mapLat: 12.7106,
-    mapLng: 77.6963,
+    mapLat: 16.203018,
+    mapLng: 79.688406,
     mapZoom: 13,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -104,19 +104,19 @@ export const demoProjects: Project[] = [
   {
     id: "p-demo3",
     name: "Green Valley Farmhouse Plots",
-    location: "Devanahalli, Bengaluru North",
+    location: "Amaravathi, Andhra Pradesh",
     totalArea: "15 Acres",
     numberOfPlots: 36,
     layoutImage: "",
     coverImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
     status: "planned",
     description:
-      "Green Valley Farmhouse Plots is an upcoming premium project near Kempegowda International Airport. Generously sized plots (15–30 cents), clubhouse, swimming pool, and organic farming zones. Pre-launch prices available for early investors.",
+      "Green Valley Farmhouse Plots is an upcoming premium project near Amaravathi Industrial Corridor. Generously sized plots (15–30 cents), clubhouse, swimming pool, and organic farming zones. Pre-launch prices available for early investors.",
     startingPrice: 3500000,
     pricePerCent: 95000,
     areaUnit: "cents",
-    mapLat: 13.2516,
-    mapLng: 77.7077,
+    mapLat: 16.5131,
+    mapLng: 80.5165,
     mapZoom: 13,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -216,10 +216,10 @@ export const demoAmenities: Amenity[] = [
 ];
 
 export const demoTestimonials: Testimonial[] = [
-  { id: "t1", name: "Rajesh Kumar", role: "Software Engineer, Bengaluru", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80", rating: 5, text: "Bought a sandalwood plot from VGG last year. The documentation was crystal clear and the team was transparent throughout. The plot value has already appreciated by 18%.", order: 0 },
+  { id: "t1", name: "Rajesh Kumar", role: "Software Engineer, Vijayawada", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80", rating: 5, text: "Bought a sandalwood plot from VGG last year. The documentation was crystal clear and the team was transparent throughout. The plot value has already appreciated by 18%.", order: 0 },
   { id: "t2", name: "Lakshmi Narayanan", role: "Doctor, Chennai", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80", rating: 5, text: "Excellent service and genuine farmland. The drip irrigation and road infrastructure exceeded my expectations. Highly recommend VGG Infra.", order: 1 },
   { id: "t3", name: "Mohammed Iqbal", role: "Business Owner, Hyderabad", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80", rating: 4, text: "I compared 5+ developers before choosing VGG. Their pricing was fair, no hidden charges, and the location is fantastic. Will buy again.", order: 2 },
-  { id: "t4", name: "Priya Sharma", role: "Architect, Bengaluru", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80", rating: 5, text: "The interactive layout tool made it so easy to pick the right plot — I could see exactly what was available and at what price. Brilliant experience.", order: 3 },
+  { id: "t4", name: "Priya Sharma", role: "Architect, Vijayawada", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80", rating: 5, text: "The interactive layout tool made it so easy to pick the right plot — I could see exactly what was available and at what price. Brilliant experience.", order: 3 },
 ];
 
 export const demoFAQs: FAQ[] = [
@@ -253,18 +253,18 @@ export const demoBrochures: Brochure[] = [
 ];
 
 export const demoNews: NewsItem[] = [
-  { id: "n1", title: "VGG Infra Launches Green Valley Pre-Launch Bookings", content: "Pre-launch bookings for our premium Devanahalli project are now open. Limited plots available at introductory pricing.", image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80", date: "2026-07-01", link: "#", order: 0 },
+  { id: "n1", title: "VGG Infra Launches Green Valley Pre-Launch Bookings", content: "Pre-launch bookings for our premium Amaravathi project are now open. Limited plots available at introductory pricing.", image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80", date: "2026-07-01", link: "#", order: 0 },
   { id: "n2", title: "Sandalwood Farm Phase 2 — 80% Sold Out", content: "Thanks to overwhelming response, Phase 2 of Vijaya Sandalwood Farm is 80% sold within 60 days of launch.", image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80", date: "2026-06-15", link: "#", order: 1 },
   { id: "n3", title: "New Tie-up with HDFC for Plot Loans", content: "We're happy to announce our partnership with HDFC Bank for instant plot loan approvals up to 80% LTV.", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80", date: "2026-05-28", link: "#", order: 2 },
 ];
 
 export const demoNearby: NearbyPlace[] = [
-  { id: "np1", name: "Kempegowda International Airport", type: "Airport", distanceKm: 28, travelMinutes: 35, icon: "plane", order: 0 },
-  { id: "np2", name: "Anekal Town", type: "Town", distanceKm: 6, travelMinutes: 12, icon: "building", order: 1 },
-  { id: "np3", name: "BMR Bus Stand", type: "Transport", distanceKm: 4, travelMinutes: 8, icon: "bus", order: 2 },
-  { id: "np4", name: "Sarjapur Tech Park", type: "IT Hub", distanceKm: 22, travelMinutes: 40, icon: "building", order: 3 },
-  { id: "np5", name: "Apollo Hospital", type: "Healthcare", distanceKm: 14, travelMinutes: 25, icon: "heart", order: 4 },
-  { id: "np6", name: "Delhi Public School", type: "Education", distanceKm: 9, travelMinutes: 18, icon: "book", order: 5 },
+  { id: "np1", name: "Vijayawada Airport (Gannavaram)", type: "Airport", distanceKm: 42, travelMinutes: 50, icon: "plane", order: 0 },
+  { id: "np2", name: "Vinukonda Town", type: "Town", distanceKm: 6, travelMinutes: 12, icon: "building", order: 1 },
+  { id: "np3", name: "Vinukonda Bus Stand", type: "Transport", distanceKm: 4, travelMinutes: 8, icon: "bus", order: 2 },
+  { id: "np4", name: "Amaravathi Industrial Corridor", type: "Industrial Hub", distanceKm: 18, travelMinutes: 25, icon: "building", order: 3 },
+  { id: "np5", name: "Government Hospital, Vinukonda", type: "Healthcare", distanceKm: 8, travelMinutes: 15, icon: "heart", order: 4 },
+  { id: "np6", name: "Narayana School, Vinukonda", type: "Education", distanceKm: 7, travelMinutes: 14, icon: "book", order: 5 },
 ];
 
 export const demoVideos: VideoItem[] = [
@@ -280,7 +280,7 @@ export const demoStats: CompanyStat[] = [
 ];
 
 export const demoTimeline: TimelineEvent[] = [
-  { id: "tl1", year: "2010", title: "VGG Infra Founded", description: "Started with a single 5-acre project in Anekal.", order: 0 },
+  { id: "tl1", year: "2010", title: "VGG Infra Founded", description: "Started with a single 5-acre project in Vinukonda.", order: 0 },
   { id: "tl2", year: "2014", title: "First DTCP Approval", description: "Vijaya Farms became our first DTCP-approved layout.", order: 1 },
   { id: "tl3", year: "2018", title: "100+ Plots Sold", description: "Crossed 100 happy customers across 3 projects.", order: 2 },
   { id: "tl4", year: "2022", title: "Sandalwood Project Launch", description: "Launched Vijaya Sandalwood Farm — sold out Phase 1 in 90 days.", order: 3 },

@@ -20,7 +20,7 @@ export const EDITOR_CONFIGS: EditorConfig[] = [
     hasActiveToggle: true,
     fields: [
       { key: "title", label: "Title", type: "text", required: true, placeholder: "Own a Piece of Nature", fullWidth: true },
-      { key: "subtitle", label: "Subtitle", type: "text", placeholder: "Premium Farmland Plots Near Bengaluru", fullWidth: true },
+      { key: "subtitle", label: "Subtitle", type: "text", placeholder: "Premium Farmland Plots Near Amaravathi", fullWidth: true },
       { key: "image", label: "Image URL", type: "image", required: true, helpText: "Recommended: 1920×1080px landscape", fullWidth: true },
       { key: "cta_text", label: "CTA Text", type: "text", placeholder: "Explore Projects" },
       { key: "cta_link", label: "CTA Link", type: "text", placeholder: "#projects" },
@@ -79,7 +79,7 @@ export const EDITOR_CONFIGS: EditorConfig[] = [
     orderField: "order",
     fields: [
       { key: "name", label: "Customer Name", type: "text", required: true, placeholder: "Rajesh Kumar" },
-      { key: "role", label: "Role / Location", type: "text", placeholder: "Software Engineer, Bengaluru" },
+      { key: "role", label: "Role / Location", type: "text", placeholder: "Software Engineer, Vijayawada" },
       { key: "photo", label: "Photo URL", type: "image" },
       { key: "rating", label: "Rating (1-5)", type: "number", default: 5, required: true },
       { key: "text", label: "Testimonial Text", type: "textarea", required: true, fullWidth: true },
