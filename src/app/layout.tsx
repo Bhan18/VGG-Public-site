@@ -18,19 +18,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vgginfra.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "VGG Infra Developers — Premium Farmland Plots Near Bengaluru",
+    default: "VGG Infra Developers — Premium Farmland Plots Near Amaravathi Industrial Corridor",
     template: "%s | VGG Infra Developers",
   },
   description:
-    "Invest in DTCP-approved farmland plots near Bengaluru. Sandalwood farms, mango orchards, and premium farmhouse plots with clear titles, modern amenities, and easy payment plans.",
+    "Invest in Premium White Sandalwood farmland plots near Amaravathi Industrial corridor. Sandalwood farms, mango orchards, and premium farmhouse plots with clear titles, modern amenities, and easy payment plans.",
   keywords: [
-    "farmland plots Bengaluru",
+    "farmland plots Amaravathi",
     "sandalwood farm investment",
-    "DTCP approved plots",
-    "mango orchard plots",
-    "farmhouse plots Karnataka",
+    "vgginfradevelopers.com",
+    "White Sandalwood",
+    "farmhouse plots Vinukonda",
     "VGG Infra Developers",
-    "real estate investment Bengaluru",
+    "real estate investment Amaravathi",
     "agricultural land for sale",
   ],
   authors: [{ name: "VGG Infra Developers" }],
@@ -38,19 +38,19 @@ export const metadata: Metadata = {
   publisher: "VGG Infra Developers",
   alternates: { canonical: siteUrl },
   openGraph: {
-    title: "VGG Infra Developers — Premium Farmland Plots Near Bengaluru",
+    title: "VGG Infra Developers — Premium Farmland Plots Near Amaravathi Industrial Corridor",
     description:
-      "Invest in DTCP-approved farmland plots with clear titles, modern amenities, and easy payment plans. Sandalwood farms, mango orchards, and premium farmhouse plots.",
+      "Invest in Premium White Sandalwood farmland plots with clear titles, modern amenities, and easy payment plans. Sandalwood farms and premium farmhouse plots.",
     url: siteUrl,
     siteName: "VGG Infra Developers",
     type: "website",
     locale: "en_IN",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80",
+        url: `${siteUrl}/company-logo.jpg?v=1`,
         width: 1200,
         height: 630,
-        alt: "VGG Infra Developers — Premium Farmland",
+        alt: "VGG Infra Developers",
       },
     ],
   },
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VGG Infra Developers — Premium Farmland Plots",
     description:
-      "DTCP-approved farmland plots near Bengaluru. Sandalwood farms, mango orchards, and premium farmhouse plots.",
-    images: ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80"],
+      "Farmland plots near Amaravathi Industrial Corridor and Vinukonda. Sandalwood farms, mango orchards, and premium farmhouse plots.",
+    images: [`${siteUrl}/company-logo.jpg?v=1`],
   },
   robots: {
     index: true,
@@ -84,19 +84,19 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   name: "VGG Infra Developers",
-  description: "Premium farmland plots near Bengaluru. DTCP approved with clear titles.",
+  description: "Premium farmland plots near Amaravathi Industrial Corridor. Clear title.",
   url: siteUrl,
-  logo: `${siteUrl}/logo.svg`,
+  logo: `${siteUrl}/company-logo.jpg?v=1`,
   telephone: "+91-98765-43210",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "No. 42, MG Road",
-    addressLocality: "Bengaluru",
-    addressRegion: "Karnataka",
-    postalCode: "560001",
+    streetAddress: "Your Office Street Address", // Update with your actual office address
+    addressLocality: "Vinukonda / Amaravathi", // Update with your actual city/locality
+    addressRegion: "Andhra Pradesh",
+    postalCode: "522647", // Update with correct postal code if needed
     addressCountry: "IN",
   },
-  areaServed: "Bengaluru, Karnataka, Tamil Nadu",
+  areaServed: "Andhra Pradesh, Telangana",
   sameAs: [],
 };
 
