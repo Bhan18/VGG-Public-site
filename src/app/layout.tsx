@@ -13,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vgginfra.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vgginfradevelopers.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -87,13 +87,13 @@ const jsonLd = {
   description: "Premium farmland plots near Amaravathi Industrial Corridor. Clear title.",
   url: siteUrl,
   logo: `${siteUrl}/company-logo.jpg?v=1`,
-  telephone: "+91-98765-43210",
+  telephone: "+91-9491737999",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Your Office Street Address", // Update with your actual office address
-    addressLocality: "Vinukonda / Amaravathi", // Update with your actual city/locality
+    streetAddress: "Pt.No-27, KCP Colony", // Update with your actual office address
+    addressLocality: "Vijayawada", // Update with your actual city/locality
     addressRegion: "Andhra Pradesh",
-    postalCode: "522647", // Update with correct postal code if needed
+    postalCode: "520007", // Update with correct postal code if needed
     addressCountry: "IN",
   },
   areaServed: "Andhra Pradesh, Telangana",
