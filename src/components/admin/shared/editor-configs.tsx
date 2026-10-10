@@ -210,7 +210,7 @@ export const EDITOR_CONFIGS: EditorConfig[] = [
     orderField: "order",
     fields: [
       { key: "title", label: "Title", type: "text", required: true, fullWidth: true },
-      { key: "url", label: "Embed URL", type: "url", required: true, fullWidth: true, helpText: "YouTube embed URL like https://www.youtube.com/embed/VIDEO_ID" },
+      { key: "url", label: "YouTube URL", type: "url", required: true, fullWidth: true, helpText: "Any YouTube link works — watch, share (youtu.be), shorts, or embed URL" },
       { key: "thumbnail", label: "Thumbnail URL", type: "image", fullWidth: true },
       { key: "order", label: "Order", type: "number", default: 0, hideInTable: true },
     ],

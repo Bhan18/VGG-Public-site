@@ -113,7 +113,7 @@ export function Hero() {
             className="mt-4 flex items-center gap-2 text-emerald-100/80 text-sm"
           >
             <MapPin className="h-4 w-4" />
-            <span>Bollapalli  · Vinukonda · Palnaduy </span>
+            <span>Bollapalli  · Vinukonda · Palnadu </span>
           </motion.div>
 
           {/* CTAs */}
