@@ -32,7 +32,7 @@ export function FeaturedProjects() {
           </h2>
           <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             Every VGG project is handpicked for location, soil quality, and appreciation potential.
-            All layouts are DTCP approved with clear titles, modern infrastructure, and flexible payment plans.
+            All layouts are with clear titles, modern infrastructure, and flexible payment plans.
             Click any project to view detailed information, gallery, plot availability, and downloads.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen(false)}
         className="group text-left rounded-3xl overflow-hidden glass-card gradient-border hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 w-[80vw] sm:w-96 shrink-0 snap-start md:w-auto md:shrink"
       >
         {/* Cover image */}

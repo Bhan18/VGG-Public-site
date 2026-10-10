@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Invest in Premium White Sandalwood farmland plots near Amaravathi Industrial corridor. Sandalwood farms, mango orchards, and premium farmhouse plots with clear titles, modern amenities, and easy payment plans.",
-  keywords: [
+  keywords: ["vgginfradevelopers",
     "farmland plots Amaravathi",
     "sandalwood farm investment",
     "vgginfradevelopers.com",

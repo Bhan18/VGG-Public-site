@@ -33,7 +33,7 @@ export function About() {
             <Sprout className="h-3.5 w-3.5" /> Our Story
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
-            Cultivating <span className="text-gradient-green">Trusted Farmland</span> Investments Since 2010
+            Cultivating <span className="text-gradient-green">Trusted Farmland</span> Investments Since 2018
           </h2>
           <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             VGG Infra Developers was founded with a singular mission: to make premium farmland ownership accessible,

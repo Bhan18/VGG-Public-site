@@ -73,7 +73,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-amber-700 dark:text-amber-300 text-sm font-medium mb-5 sm:mb-6"
           >
             <Sparkles className="h-4 w-4" />
-            Sri Gandham Farmland Plots Near Amaravathi
+            Sri Gandham Farmland Plots at Amaravathi Industrial Corridor
           </motion.div>
 
           {/* Title */}
@@ -113,7 +113,7 @@ export function Hero() {
             className="mt-4 flex items-center gap-2 text-emerald-100/80 text-sm"
           >
             <MapPin className="h-4 w-4" />
-            <span>Guntur · Amaravathi · Vinukonda · </span>
+            <span>Bollapalli  · Vinukonda · Palnaduy </span>
           </motion.div>
 
           {/* CTAs */}
@@ -138,7 +138,8 @@ export function Hero() {
             </button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats Disable or enable based on requirement 
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -150,6 +151,8 @@ export function Hero() {
             <StatCard label="Booked" value={stats.booked} color="text-amber-600 dark:text-amber-400" />
             <StatCard label="Sold" value={stats.sold} color="text-rose-600 dark:text-rose-400" />
           </motion.div>
+          
+          */}
         </div>
       </div>
 
