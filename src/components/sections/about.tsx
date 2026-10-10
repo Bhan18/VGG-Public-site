@@ -37,8 +37,8 @@ export function About() {
           </h2>
           <p className="mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
             VGG Infra Developers was founded with a singular mission: to make premium farmland ownership accessible,
-            transparent, and rewarding. Over 15 years, we have delivered 12+ DTCP-approved projects across 47 acres,
-            helping 850+ families own a piece of nature that grows in value year after year. Every plot we sell comes
+            transparent, and rewarding. Over 08 years, we have delivered white Sandalwood projects across 103 acres,
+            helping 150+ families own a piece of nature that grows in value year after year. Every plot we sell comes
             with clear titles, modern infrastructure, and the personal attention of our founding team.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ className="glass-card rounded-2xl p-4 md:p-6 text-center gradient-border"
           <ValueCard
             icon={Target}
             title="Our Mission"
-            desc="Deliver DTCP-approved farmland plots with clear titles, modern amenities, and transparent pricing — making land ownership simple and secure."
+            desc="Deliver White Sandalwood Farmland plots with clear titles, modern amenities, and transparent pricing — making land ownership simple and secure."
             delay={0.1}
           />
           <ValueCard
